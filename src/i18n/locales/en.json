@@ -1,0 +1,54 @@
+{
+  "header": {
+    "title": "Mars Tickets",
+    "subtitle": "Your journey to the Red Planet begins here"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "checkout": "Proceed to Checkout",
+    "passenger": "Passenger {{number}} name"
+  },
+  "ticket": {
+    "addToCart": "Add to Cart",
+    "features": "Features"
+  },
+  "mealPlan": {
+    "title": "Meal Plan",
+    "standard": {
+      "name": "Standard",
+      "price": 500,
+      "description": "Regular space-approved meals"
+    },
+    "vegetarian": {
+      "name": "Vegetarian",
+      "price": 600,
+      "description": "Plant-based space meals"
+    },
+    "premium": {
+      "name": "Premium",
+      "price": 1000,
+      "description": "Gourmet space dining experience"
+    }
+  },
+  "wifi": {
+    "title": "Wi-Fi Package",
+    "basic": {
+      "name": "Basic",
+      "description": "50Mbps connection"
+    },
+    "highSpeed": {
+      "name": "High-Speed",
+      "description": "200Mbps connection"
+    },
+    "ultra": {
+      "name": "Ultra",
+      "description": "500Mbps connection"
+    },
+    "duration": {
+      "1-month": "1 Month",
+      "3-months": "3 Months",
+      "6-months": "6 Months"
+    }
+  }
+}
