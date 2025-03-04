@@ -11,7 +11,12 @@
   },
   "ticket": {
     "addToCart": "Add to Cart",
-    "features": "Features"
+    "features": "Features",
+    "validationError": "Please enter names for all passengers",
+    "passenger": "Passenger",
+    "ticketId": "Ticket ID",
+    "mealPlan": "Meal Plan",
+    "downloadTickets": "Download Tickets"
   },
   "mealPlan": {
     "title": "Meal Plan",
@@ -49,6 +54,41 @@
       "1-month": "1 Month",
       "3-months": "3 Months",
       "6-months": "6 Months"
+    }
+  },
+  "tickets": {
+    "redPlanetPioneer": {
+      "tier": "Red Planet Pioneer",
+      "description": "Experience the first wave of Mars colonization with our entry-level package.",
+      "features": [
+        "Basic life support systems",
+        "Shared living quarters",
+        "Basic Mars exploration gear",
+        "Emergency return insurance"
+      ]
+    },
+    "martianElite": {
+      "tier": "Martian Elite",
+      "description": "Premium comfort and exclusive access to advanced Mars facilities.",
+      "features": [
+        "Enhanced life support systems",
+        "Private living pod",
+        "Advanced exploration equipment",
+        "Priority medical care",
+        "Exclusive facility access"
+      ]
+    },
+    "olympusPrime": {
+      "tier": "Olympus Prime",
+      "description": "The ultimate luxury Mars experience with unparalleled amenities.",
+      "features": [
+        "State-of-the-art life support",
+        "Luxury habitat suite",
+        "Personal transport vehicle",
+        "24/7 concierge service",
+        "Private research lab access",
+        "First-class return journey"
+      ]
     }
   }
 }

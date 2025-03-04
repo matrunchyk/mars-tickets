@@ -9,54 +9,54 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { useTranslation } from 'react-i18next';
 
-const TICKETS: Ticket[] = [
-  {
-    tier: "Red Planet Pioneer",
-    price: 250000,
-    description: "Experience the first wave of Mars colonization with our entry-level package.",
-    features: [
-      "Basic life support systems",
-      "Shared living quarters",
-      "Basic Mars exploration gear",
-      "Emergency return insurance"
-    ],
-    image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80"
-  },
-  {
-    tier: "Martian Elite",
-    price: 500000,
-    description: "Premium comfort and exclusive access to advanced Mars facilities.",
-    features: [
-      "Enhanced life support systems",
-      "Private living pod",
-      "Advanced exploration equipment",
-      "Priority medical care",
-      "Exclusive facility access"
-    ],
-    image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?auto=format&fit=crop&q=80"
-  },
-  {
-    tier: "Olympus Prime",
-    price: 1000000,
-    description: "The ultimate luxury Mars experience with unparalleled amenities.",
-    features: [
-      "State-of-the-art life support",
-      "Luxury habitat suite",
-      "Personal transport vehicle",
-      "24/7 concierge service",
-      "Private research lab access",
-      "First-class return journey"
-    ],
-    image: "https://images.unsplash.com/photo-1614726365952-510103b1bbb4?auto=format&fit=crop&q=80"
-  }
-];
-
 function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [showCart, setShowCart] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [tickets, setTickets] = useState<PassengerInfo[]>([]);
   const { t } = useTranslation();
+
+  const TICKETS: Ticket[] = [
+    {
+      tier: t('tickets.redPlanetPioneer.tier'),
+      price: 250000,
+      description: t('tickets.redPlanetPioneer.description'),
+      features: [
+        t('tickets.redPlanetPioneer.features.0'),
+        t('tickets.redPlanetPioneer.features.1'),
+        t('tickets.redPlanetPioneer.features.2'),
+        t('tickets.redPlanetPioneer.features.3')
+      ],
+      image: "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&q=80"
+    },
+    {
+      tier: t('tickets.martianElite.tier'),
+      price: 500000,
+      description: t('tickets.martianElite.description'),
+      features: [
+        t('tickets.martianElite.features.0'),
+        t('tickets.martianElite.features.1'),
+        t('tickets.martianElite.features.2'),
+        t('tickets.martianElite.features.3'),
+        t('tickets.martianElite.features.4')
+      ],
+      image: "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?auto=format&fit=crop&q=80"
+    },
+    {
+      tier: t('tickets.olympusPrime.tier'),
+      price: 1000000,
+      description: t('tickets.olympusPrime.description'),
+      features: [
+        t('tickets.olympusPrime.features.0'),
+        t('tickets.olympusPrime.features.1'),
+        t('tickets.olympusPrime.features.2'),
+        t('tickets.olympusPrime.features.3'),
+        t('tickets.olympusPrime.features.4'),
+        t('tickets.olympusPrime.features.5')
+      ],
+      image: "https://images.unsplash.com/photo-1614726365952-510103b1bbb4?auto=format&fit=crop&q=80"
+    }
+  ];
 
   const handleAddToCart = (tier: string) => {
     const existingItem = cart.find(item => item.tier === tier);
@@ -103,7 +103,7 @@ function App() {
     );
 
     if (!allValid) {
-      alert('Please enter names for all passengers');
+      alert(t('ticket.validationError'));
       return;
     }
 
@@ -153,7 +153,7 @@ function App() {
               onClick={downloadTickets}
               className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
             >
-              Download Tickets
+              {t('ticket.downloadTickets')}
             </button>
           </div>
           {tickets.map((ticket) => (

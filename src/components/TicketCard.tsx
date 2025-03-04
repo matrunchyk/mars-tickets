@@ -1,6 +1,7 @@
 import React from 'react';
 import { Rocket, Check } from 'lucide-react';
 import { Ticket } from '../types';
+import { useTranslation } from 'react-i18next';
 
 interface TicketCardProps {
   ticket: Ticket;
@@ -8,6 +9,8 @@ interface TicketCardProps {
 }
 
 export const TicketCard: React.FC<TicketCardProps> = ({ ticket, onAddToCart }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white rounded-xl shadow-xl overflow-hidden transform transition-all hover:scale-105">
       <div className="h-48 overflow-hidden">
@@ -33,7 +36,7 @@ export const TicketCard: React.FC<TicketCardProps> = ({ ticket, onAddToCart }) =
             onClick={() => onAddToCart(ticket.tier)}
             className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
-            Add to Cart
+            {t('ticket.addToCart')}
           </button>
         </div>
       </div>

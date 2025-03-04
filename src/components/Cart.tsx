@@ -19,7 +19,7 @@ const MEAL_PLANS: MealPlan[] = [
 
 const WIFI_PACKAGES: { speed: WifiPackage['speed']; durations: WifiPackage['duration'][]; basePrice: number }[] = [
   { speed: 'basic', durations: ['1-month', '3-months', '6-months'], basePrice: 50 },
-  { speed: 'high-speed', durations: ['1-month', '3-months', '6-months'], basePrice: 100 },
+  { speed: 'highSpeed', durations: ['1-month', '3-months', '6-months'], basePrice: 100 },
   { speed: 'ultra', durations: ['1-month', '3-months', '6-months'], basePrice: 200 }
 ];
 
@@ -49,7 +49,7 @@ export const Cart: React.FC<CartProps> = ({ items, onUpdatePassenger, onCheckout
             <div key={idx} className="mb-6 border-b pb-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-semibold">{item.tier}</span>
-                <span>Quantity: {item.quantity}</span>
+                <span>{t('cart.quantity')}: {item.quantity}</span>
               </div>
               
               {item.passengers.map((passenger, index) => (
@@ -74,7 +74,7 @@ export const Cart: React.FC<CartProps> = ({ items, onUpdatePassenger, onCheckout
                       })}
                       className="w-full border rounded p-2"
                     >
-                      <option value="">{t('mealPlan.select')}</option>
+                      <option value="">{t('mealPlan.title')}</option>
                       {MEAL_PLANS.map(plan => (
                         <option key={plan.type} value={plan.type}>
                           {t(`mealPlan.${plan.type}.name`)} - ${plan.price}
@@ -101,7 +101,7 @@ export const Cart: React.FC<CartProps> = ({ items, onUpdatePassenger, onCheckout
                         }}
                         className="border rounded p-2"
                       >
-                        <option value="">{t('wifi.select')}</option>
+                        <option value="">{t('wifi.title')}</option>
                         {WIFI_PACKAGES.map(pkg => (
                           <option key={pkg.speed} value={pkg.speed}>
                             {t(`wifi.${pkg.speed}.name`)}

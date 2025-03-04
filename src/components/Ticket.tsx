@@ -17,12 +17,12 @@ export const Ticket: React.FC<TicketProps> = ({ passenger, tier }) => {
         <div>
           <h3 className="text-2xl font-bold text-red-600">{t('header.title')}</h3>
           <p className="text-gray-600 mt-2">{tier}</p>
-          <p className="text-lg font-semibold mt-4">Passenger: {passenger.name}</p>
-          <p className="text-gray-500">Ticket ID: {passenger.ticketId}</p>
+          <p className="text-lg font-semibold mt-4">{t('ticket.passenger')}: {passenger.name}</p>
+          <p className="text-gray-500">{t('ticket.ticketId')}: {passenger.ticketId}</p>
           
           {passenger.mealPlan && (
             <p className="text-sm text-gray-600 mt-2">
-              Meal Plan: {t(`mealPlan.${passenger.mealPlan.type}.name`)}
+              {t('ticket.mealPlan')}: {t(`mealPlan.${passenger.mealPlan.type}.name`)}
             </p>
           )}
           

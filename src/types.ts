@@ -25,7 +25,7 @@ export interface MealPlan {
 }
 
 export interface WifiPackage {
-  speed: 'basic' | 'high-speed' | 'ultra';
+  speed: 'basic' | 'highSpeed' | 'ultra';
   duration: '1-month' | '3-months' | '6-months';
   price: number;
 }
